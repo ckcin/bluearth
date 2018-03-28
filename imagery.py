@@ -18,6 +18,10 @@ imagery_urls = {
 DEFAULT_URL  = imagery_urls["CONUS"]
 DEFAULT_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),"imagery")
 
+def getLocation():
+    # to eventually be developed to pull from system env
+    return "EAST"
+
 def getImage(url = DEFAULT_URL, folder = DEFAULT_PATH):
     if not os.path.exists(folder):
         os.makedirs(folder)
@@ -29,8 +33,10 @@ def getImage(url = DEFAULT_URL, folder = DEFAULT_PATH):
     os.unlink(currentfile)
     os.symlink(filename,currentfile)
 
+def getLocaleImage(folder = DEFAULT_PATH):
+    getImage(imagery_urls[getLocation()], folder)
     
 ###########################
 if __name__ == "__main__":
-    getImage()
+    getLocaleImage()
 

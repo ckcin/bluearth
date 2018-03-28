@@ -31,8 +31,6 @@ def set_wallpaper(image_file_with_path):
     call(['gsettings', 'set', setting_string, 'picture-uri', 'file://%s' % (filepath)])
     return True
 
-
-
 ###########################
 if __name__ == "__main__":
     print get_manager()
