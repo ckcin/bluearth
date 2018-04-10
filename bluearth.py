@@ -2,11 +2,18 @@
 
 ## @ author: N Carrasco
 
-import config
+import config, imagery, wallpaper
 
 
 ###########################
 if __name__ == "__main__":
     print "bluearth" 
-    configuration = config.buildParser().parse_args()
-    print configuration
+    config = config.buildParser().parse_args()
+    print config
+
+    # get imagery
+    image = imagery.getImage(url=config.url or imagery.imagery_urls[config.image],
+                             folder=config.storage)
+
+    # set wallpaper
+    wallpaper.set_wallpaper(image)
