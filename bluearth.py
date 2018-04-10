@@ -4,6 +4,10 @@
 
 import config, imagery, wallpaper
 
+# daemon class for running bluearth
+class bluearthd():
+    def __init__(self):
+        print "do something daemony"
 
 ###########################
 if __name__ == "__main__":
