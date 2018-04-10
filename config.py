@@ -16,6 +16,8 @@ def buildParser():
                default='CONUS')
     parser.add('--refresh', help="Refresh rate (in minutes) for retreiving images in daemon mode",
             default=15)
+    parser.add('--storage', help="Path to area to storge images",
+               default=None)
     parser.add('--daemon', '-d', help="Run as daemon",
                action='store_true',
                default=False)
