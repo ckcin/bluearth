@@ -8,7 +8,7 @@ import urllib
 import datetime
 
 imagery_urls = {
-    "CONUS"  : "https://www.nnvl.noaa.gov/satimg/GERVISIR.JPG",
+    "CONUS"  : "ihttps://www.nnvl.noaa.gov/images/MIDUSCOLOR.JPG", #OLD "https://www.nnvl.noaa.gov/satimg/GERVISIR.JPG",
     "GOES_EAST"   : "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/GEOCOLOR/latest.jpg",
     "GOES_WEST"   : "http://goes.gsfc.nasa.gov/goescolor/goeswest/pacific2/color_lrg/latest.jpg",
     "GLOBAL" : "https://static.die.net/earth/mercator/1600.jpg",
