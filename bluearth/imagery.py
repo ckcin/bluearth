@@ -27,17 +27,18 @@ def getImage(url = DEFAULT_URL, folder = DEFAULT_PATH):
     if not os.path.exists(folder):
         os.makedirs(folder)
     filename=datetime.datetime.now().strftime("%Y%m%d%H%M")+".jpg"
+    filename=os.path.join(folder,filename)
 
-    urllib.urlretrieve(url,os.path.join(folder,filename))
+    urllib.urlretrieve(url,filename)
 
     #TODO: add check for file change
     #TODO: add option to purge older images
 
-    currentfile=os.path.join(folder,"current.jpg")
-    os.unlink(currentfile)
-    os.symlink(filename,currentfile)
+#    currentfile=os.path.join(folder,"current.jpg")
+#    os.unlink(currentfile)
+#    os.symlink(filename,currentfile)
 
-    return currentfile
+    return filename
 
 def getLocaleImage(folder = DEFAULT_PATH):
     return getImage(imagery_urls[getLocation()], folder)
