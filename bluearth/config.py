@@ -15,12 +15,14 @@ def buildParser():
                choices=['CONUS','GOES_EAST','GOES_WEST','GLOBAL'],
                default='CONUS')
     parser.add('--refresh', help="Refresh rate (in minutes) for retreiving images in daemon mode",
-            default=15)
+            default=15, type=float)
     parser.add('--storage', help="Path to area to storge images",
                default=None)
     parser.add('--daemon', '-d', help="Run as daemon",
                action='store_true',
                default=False)
+    parser.add('--pid', help="Path to pid file",
+               default=None)
     parser.add('-v', '--verbose', help="verbose mode",
                action='store_true',
                default=False)
